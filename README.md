@@ -1,6 +1,6 @@
-# OGUsers-Bumper
+# OGUsers Thread Bumping Bot
 
-The market is saturated as fuck and I don't know why you'd pay to make your own or get one with a fancy "2captcha" support.
+The market for this is dumb, I don't know why you'd pay to make your own or get one with a fancy "2captcha" support.
 
 Requirements:
 - Windows
