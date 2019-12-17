@@ -15,4 +15,7 @@ SETUP:
 - Add thread URL to thread url section.
 - Run
 
+SUPPORT:
+Need help? Add me on discord (Cloud Q UwU#3776) or join my server discord.gg/tPaQP4t
+
 Suports Windows only.
