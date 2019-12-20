@@ -2,6 +2,8 @@
 
 The market for this is dumb, I don't know why you'd pay to make your own or get one with a fancy "2captcha" support.
 
+__Download:__https://github.com/AdventurefulGIT/OGUsers-Bumper/releases/download/1.0/OGUsers.Bumper.rar
+
 Requirements:
 - Windows
 - Python 3.6.x
