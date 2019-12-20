@@ -2,7 +2,7 @@
 
 The market for this is dumb, I don't know why you'd pay to make your own or get one with a fancy "2captcha" support.
 
-__Download__:https://github.com/AdventurefulGIT/OGUsers-Bumper/releases/download/1.0/OGUsers.Bumper.rar
+__Download:__ https://github.com/AdventurefulGIT/OGUsers-Bumper/releases/download/1.0/OGUsers.Bumper.rar
 
 Requirements:
 - Windows
