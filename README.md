@@ -18,6 +18,6 @@ SETUP:
 - Run
 
 SUPPORT:
-Need help? Add me on discord (Cloud Q UwU#3776) or join my server discord.gg/tPaQP4t
+Need help? Add me on discord (Cloud#1999) or join my server discord.gg/tPaQP4t
 
 Suports Windows only.
