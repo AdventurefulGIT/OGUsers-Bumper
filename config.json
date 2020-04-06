@@ -3,6 +3,6 @@
 	"settings":{
 		"delay":3630,
 		"content":["Join my discord!", "Send me a message if you're interested in getting something developped for you!", "Cheap prices and quick delivery time"],
-		"thread_url":"THREAD URL HERE"
+		"threads":["thread_url1", "thread_url2", "thread_url3"]
 	}
 }
