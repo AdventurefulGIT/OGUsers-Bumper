@@ -8,7 +8,7 @@ class OGUsers:
 	def __init__(self):
 		self.scraper = cloudscraper.create_scraper(browser='chrome', interpreter='nodejs', recaptcha={'provider': 'return_response'})
 		self.config = json.load(open('config.json'))
-		self.cookies = {'mybbuser':self.config['mybbuser']}
+		self.cookies = {'ogusersmybbuser':self.config['mybbuser']}
 		self.lastpost = ""
 
 		self.startBot()
@@ -31,7 +31,7 @@ class OGUsers:
 				self.cookies[cookie['name']] = cookie['value']
 			return getPostKey()
 
-	def sendPost(self, message):
+	def sendPost(self, message, thread_url):
 		return self.scraper.post('https://ogusers.com/newreply.php?ajax=1', 
 			data={
 					'my_post_key':self.getPostKey(),
@@ -40,7 +40,7 @@ class OGUsers:
 					'posthash':'',
 					'quoted_ids':'',
 					'lastpid': 0,
-					'tid':self.getTID(self.config['settings']['thread_url']),
+					'tid':self.getTID(thread_url),
 					'method':'quickreply',
 					'message':' ' + str(message)
 				}, cookies=self.cookies).text
@@ -51,10 +51,12 @@ class OGUsers:
 
 	def startBot(self):
 		while 1:
-			if len(self.config['settings']['content']) > 1:
-				print(self.sendPost(self.randomPost()))
-			else:
-				self.sendPost(self.config['settings']['content'][0])
+			for thread in self.config['settings']['threads']:
+				if len(self.config['settings']['content']) > 1:
+					print(self.sendPost(self.randomPost(), thread))
+				else:
+					print(self.sendPost(self.config['settings']['content'][0], thread))
+
 			print('Waiting cooldown before sending next post!')
 			time.sleep(self.config['settings']['delay'])
 
