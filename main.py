@@ -9,7 +9,7 @@ class OGUsers:
 	def __init__(self):
 		self.scraper = requests.Session()
 		self.config = json.load(open('config.json'))
-		self.cookies = {'ogusersmybbuser':self.config['mybbuser'], 'oguserssid':self.config['sid']}
+		self.cookies = {'ogusersmybbuser':self.config['mybbuser']}
 		self.lastpost = ""
 
 		self.startBot()
