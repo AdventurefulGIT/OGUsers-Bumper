@@ -8,7 +8,6 @@ Requirements:
 - Windows
 - Python 3.6.x
 - A brain
-- NODE.JS (version 10+) https://nodejs.org/en/
 
 SETUP:
 - Get your mybbuser cookie, if you don't know how to get your cookie, here's an example: (https://youtu.be/36l3gKRKyfk)
