@@ -57,7 +57,7 @@ class OGUsers:
 					print(self.send_post(message, thread))
 
 				elif len(self.config['settings']['content']) > 1:
-					print(self.send_post(self.randomPost(), thread))
+					print(self.send_post(self.random_post(), thread))
 
 				else:
 					print(self.send_post(self.config['settings']['content'][0], thread))
