@@ -12,7 +12,6 @@ Requirements:
 SETUP:
 - Get your mybbuser cookie, if you don't know how to get your cookie, here's an example: (https://youtu.be/36l3gKRKyfk)
 - Add content you would like to be posted (EX: "Bumping my thread" )
-- Minimum delay is 3630 ( 60 minutes )
 - Add thread URL to thread url section.
 - Run
 
