@@ -53,17 +53,18 @@ class OGUsers:
 			for thread in self.config['settings']['threads']:
 				if '~~' in thread:
 					thread, message = thread.split('~~')
-					print(self.sendPost(message, thread))
+					print(self.send_post(message, thread))
 
 				elif len(self.config['settings']['content']) > 1:
-					print(self.sendPost(self.randomPost(), thread))
+					print(self.send_post(self.randomPost(), thread))
 
 				else:
-					print(self.sendPost(self.config['settings']['content'][0], thread))
+					print(self.send_post(self.config['settings']['content'][0], thread))
 
 				time.sleep(10)
 
 			print('Waiting cooldown before sending next post!')
 			time.sleep(self.config['settings']['delay'])
 
-OGUsers()
+if __name__ == "__main__":
+	OGUsers()
