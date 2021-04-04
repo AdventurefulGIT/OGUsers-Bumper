@@ -47,7 +47,7 @@ class OGUsers:
 
 	def random_post(self):
 		post = random.choice(self.config['settings']['content'])
-		return x if not x == self.last_post else self.random_post()
+		return post if not post == self.last_post else self.random_post()
 
 	def start_bot(self):
 		while True:
