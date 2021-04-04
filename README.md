@@ -20,7 +20,9 @@ Need help? Add me on discord (Cloud#1999) or join my server discord.gg/VD96fYy
 
 TIPS:
 If you would like to support the development and up-keep of this project, feel free to donate
+
 BTC: 35G5WhhgZgZ2Xb2yCHLfPUJgs7He89vfKG
+
 ETH: 0xd713602bb39D032E6262aD43183f9042e27a2D4a
 
 
