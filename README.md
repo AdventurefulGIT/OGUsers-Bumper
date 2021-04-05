@@ -3,7 +3,6 @@
 ## __Download:__ https://github.com/AdventurefulGIT/OGUsers-Bumper/releases/
 
 ## __Requirements__:
-- Windows
 - Python 3.6+
 - A brain
 
