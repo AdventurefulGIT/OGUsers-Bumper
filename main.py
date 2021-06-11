@@ -1,4 +1,4 @@
-import requests
+import cloudscraper
 import random
 import json
 import time
@@ -6,7 +6,7 @@ import re
 
 class OGUsers:
 	def __init__(self):
-		self.session = requests.Session()
+		self.session = cloudscraper.create_scraper()
 		self.session.headers.update({'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'})
 
 		self.config = json.load(open('config.json'))
