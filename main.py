@@ -1,8 +1,10 @@
 import cloudscraper
+import base64
 import random
 import json
 import time
 import re
+
 
 class OGUsers:
 	def __init__(self):
@@ -13,23 +15,40 @@ class OGUsers:
 		self.session.cookies.set("ogusersmybbuser", self.config['mybbuser'], domain="ogusers.com")
 
 		self.last_post = ""
+		
+		self.username, self.uid = self.get_user_authenticated()
+		print(f"Account authenticated\nUsername: {self.username}\nUID: {self.uid}")
 
 		self.start_bot()
 
 	def get_thread_id(self, thread_url):
-		r = self.session.get(
+		r = self.session.request(
+				method = "GET",
 				url = thread_url
 			)
-		return re.findall("newreply\.php\?tid=(\d+)", r.text)[0]
+		return re.search(r"newreply\.php\?tid=(\d+)", r.text).group(1)
 
 	def get_post_key(self):
-		r = self.session.get(
+		r = self.session.request(
+				method = "GET",
 				url = "https://ogusers.com/misc.php?action=help&hid=33",
 			)
-		return re.search("my_post_key = \"(.+?)\";", r.text).group(1)
+		return re.search(r"my_post_key = \"(.+?)\";", r.text).group(1)
+
+	def get_user_authenticated(self):
+		try:
+			r = self.session.request(
+				method = "GET",
+				url = "https://ogusers.com/,"
+			)
+			return (re.search(r"Profile of ([^<]+)", r.text).group(1), re.search(r"uid=(\d+)", r.text).group(1))
+		except:
+			print("Detected Cloudflare challenge version 2\nThis bot does not currently support it, please try again later.\nThe challenge version may change depending on time of day.")
+			quit()
 
 	def send_post(self, message, thread_url):
-		r = self.session.post(
+		r = self.session.request(
+				method = "POST",
 				url = "https://ogusers.com/newreply.php?ajax=1",
 				data = {
 					'my_post_key':self.get_post_key(),
@@ -68,4 +87,5 @@ class OGUsers:
 			time.sleep(self.config['settings']['delay'])
 
 if __name__ == "__main__":
+	print(base64.b64decode('PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQogIFdlbGNvbWUgdG8gQ2xvdWQncyBPR1VzZXJzIEF1dG8gQnVtcGVyCgogIEFueSBxdWVzdGlvbnM/IENvbnRhY3QgbWUgb24gT0dVc2VycwogIGh0dHBzOi8vb2d1c2Vycy5jb20vbWVtYmVyLnBocD9hY3Rpb249cHJvZmlsZSZ1aWQ9NTUxNDIKCj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09Cg==').decode())
 	OGUsers()
